@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Techniques to crop and resize images with CSS</title>
+  
+  
+  <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap-reboot.min.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+  <h1>Techniques to crop and resize images with CSS</h1>
+
+<h2>Image as a background</h2>
+
+<div class="image-grid">
+
+  <a href="https://www.flickr.com/photos/teroauralinna/33704491300" class="image-bg" style="background-image:url(https://farm3.staticflickr.com/2809/33704491300_1df01dd919_z_d.jpg)" target="_blank">
+    <img class="image-bg-placeholder" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" alt="" />
+    <img class="image-bg-img sr-only" src="https://farm3.staticflickr.com/2809/33704491300_1df01dd919_z_d.jpg" alt="Cropped image as a background example" />
+  </a>
+
+  <a href="https://www.flickr.com/photos/teroauralinna/33704488370" class="image-bg" style="background-image:url(https://farm3.staticflickr.com/2848/33704488370_9572b9d270_z_d.jpg)" target="_blank">
+    <img class="image-bg-placeholder" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" alt="" />
+    <img class="image-bg-img sr-only" src="https://farm3.staticflickr.com/2848/33704488370_9572b9d270_z_d.jpg" alt="Cropped image as a background example" />
+  </a>
+
+  <a href="https://www.flickr.com/photos/teroauralinna/34088934825" class="image-bg" style="background-image:url(https://farm4.staticflickr.com/3947/34088934825_0acfe80a04_z_d.jpg)" target="_blank">
+    <img class="image-bg-placeholder" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" alt="" />
+    <img class="image-bg-img sr-only" src="https://farm4.staticflickr.com/3947/34088934825_0acfe80a04_z_d.jpg" alt="Cropped image as a background example" />
+  </a>
+
+  <a href="https://www.flickr.com/photos/teroauralinna/34088930595" class="image-bg" style="background-image:url(https://farm4.staticflickr.com/3956/34088930595_2b84cec168_z_d.jpg)" target="_blank">
+    <img class="image-bg-placeholder" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" alt="" />
+    <img class="image-bg-img sr-only" src="https://farm4.staticflickr.com/3956/34088930595_2b84cec168_z_d.jpg" alt="Cropped image as a background example" />
+  </a>
+
+</div>
+
+<h2>The object-fit property</h2>
+
+<div class="image-grid">
+
+  <a href="https://www.flickr.com/photos/teroauralinna/33704491300" class="image-fit" target="_blank">
+    <img class="image-fit-placeholder" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" alt="" />
+    <img class="image-fit-img" src="https://farm3.staticflickr.com/2809/33704491300_1df01dd919_z_d.jpg" alt="Cropped image using object-fit example" />
+  </a>
+
+  <a href="https://www.flickr.com/photos/teroauralinna/33704488370" class="image-fit" target="_blank">
+    <img class="image-fit-placeholder" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" alt="" />
+    <img class="image-fit-img" src="https://farm3.staticflickr.com/2848/33704488370_9572b9d270_z_d.jpg" alt="Cropped image using object-fit example" />
+  </a>
+
+  <a href="https://www.flickr.com/photos/teroauralinna/34088934825" class="image-fit" target="_blank">
+    <img class="image-fit-placeholder" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" alt="" />
+    <img class="image-fit-img" src="https://farm4.staticflickr.com/3947/34088934825_0acfe80a04_z_d.jpg" alt="Cropped image using object-fit example" />
+  </a>
+
+  <a href="https://www.flickr.com/photos/teroauralinna/34088930595" class="image-fit" target="_blank">
+    <img class="image-fit-placeholder" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" alt="" />
+    <img class="image-fit-img" src="https://farm4.staticflickr.com/3956/34088930595_2b84cec168_z_d.jpg" alt="Cropped image using object-fit example" />
+  </a>
+
+</div>
+
+<h2>Absolute positioned image</h2>
+
+<div class="image-grid">
+
+  <a href="https://www.flickr.com/photos/teroauralinna/33704491300" class="image" target="_blank">
+    <img class="image-placeholder" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" alt="" />
+    <img class="image-img" src="https://farm3.staticflickr.com/2809/33704491300_1df01dd919_z_d.jpg" alt="Cropped image using absolute positioning example" />
+  </a>
+
+  <a href="https://www.flickr.com/photos/teroauralinna/33704488370" class="image" target="_blank">
+    <img class="image-placeholder" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" alt="" />
+    <img class="image-img" src="https://farm3.staticflickr.com/2848/33704488370_9572b9d270_z_d.jpg" alt="Cropped image using absolute positioning example" />
+  </a>
+
+  <a href="https://www.flickr.com/photos/teroauralinna/34088934825" class="image" target="_blank">
+    <img class="image-placeholder" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" alt="" />
+    <img class="image-img" src="https://farm4.staticflickr.com/3947/34088934825_0acfe80a04_z_d.jpg" alt="Cropped image using absolute positioning example" />
+  </a>
+
+  <a href="https://www.flickr.com/photos/teroauralinna/34088930595" class="image" target="_blank">
+    <img class="image-placeholder" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" alt="" />
+    <img class="image-img" src="https://farm4.staticflickr.com/3956/34088930595_2b84cec168_z_d.jpg" alt="Cropped image using absolute positioning example" />
+  </a>
+
+</div>
+
+<h2>Image inside SVG</h2>
+
+<div class="svg-image-grid">
+
+  <a href="https://www.flickr.com/photos/teroauralinna/33704491300" class="image-svg" target="_blank">
+    <svg viewBox="0 0 1 1" role="img">
+      <title>Cropped image using SVG example</title>
+      <image xlink:href="https://farm3.staticflickr.com/2809/33704491300_1df01dd919_z_d.jpg" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" />
+    </svg>
+  </a>
+
+  <a href="https://www.flickr.com/photos/teroauralinna/33704488370" class="image-svg" target="_blank">
+    <svg viewBox="0 0 1 1" role="img">
+      <title>Cropped image using SVG example</title>
+      <image xlink:href="https://farm3.staticflickr.com/2848/33704488370_9572b9d270_z_d.jpg" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" />
+    </svg>
+  </a>
+
+  <a href="https://www.flickr.com/photos/teroauralinna/34088934825" class="image-svg" target="_blank">
+    <svg viewBox="0 0 1 1" role="img">
+      <title>Cropped image using SVG example</title>
+      <image xlink:href="https://farm4.staticflickr.com/3947/34088934825_0acfe80a04_z_d.jpg" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" />
+    </svg>
+  </a>
+
+  <a href="https://www.flickr.com/photos/teroauralinna/34088930595" class="image-svg" target="_blank">
+    <svg viewBox="0 0 1 1" role="img">
+      <title>Cropped image using SVG example</title>
+      <image xlink:href="https://farm4.staticflickr.com/3956/34088930595_2b84cec168_z_d.jpg" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" />
+    </svg>
+  </a>
+
+</div>
+
+<p style="text-align:center">Read more: <a href="https://auralinna.blog/post/2018/crop-and-resize-images-with-css" target="_blank">Crop and resize images with CSS</a></p>
+  
+  
+
+</body>
+
+</html>

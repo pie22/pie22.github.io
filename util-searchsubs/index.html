@@ -1,0 +1,174 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<TITLE>Monitoring tool</TITLE>
+<link rel="shortcut icon" type="image/x-icon" href="Eye-icon.png" />
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<SCRIPT language=JavaScript>
+<!--
+$(document).ready(function() {
+    $('#keyword').focus();
+	$( "#btnquery1" ).click(function() { 		
+		makesearch('google');
+	});	
+	$( "#btnquery2" ).click(function() { 		
+		makesearch('monitor');
+	});	
+});
+
+//--------------------
+// create text search
+function makesearch(where) {	
+	var html="";
+	var t=0,i=0;
+	var textlines = new Array();
+	var keyword = new Array();
+
+	//엔터키로 라인 분리
+	textlines = $('#keyword').val().split('\n');
+	for (t=0; t < textlines.length; t++ )
+	{
+		//쉼표로 키워드 분리
+		keyword = textlines[t].split(',');
+		
+		//입력키워드마다 모니터링크 만들기
+		for (i=0; i < keyword.length; i++) 
+			if(keyword[i].trim() != '')
+			{
+				if(where == 'google')
+				html += "<p><h3>" + keyword[i] + "</h3></p>" + getgooglelinks(keyword[i]);
+				else if(where == 'monitor')
+				html += "<p><h3>" + keyword[i] + "</h3></p>" + getmonitorlinks(keyword[i]);
+			}
+		
+		$('#divsearchlist').html(html);	
+	}
+}
+//--------------------
+function getgooglelinks(keyword) {
+	var urlquery = "https://www.google.co.kr/?gws_rd=ssl#q=";
+	var html="";
+	
+	//사이트보존
+	sitekeyword = keyword;
+	keyword = keyword + " -youtube.com ";
+	
+	//문장검색(좋은검색문장 예제 업데이트)
+	html += "Google <br>";
+	html += showlink(keyword, "[KEYWORD]", urlquery + keyword) + " | ";
+	html += showlink(keyword, "[best] ", urlquery + "best " + keyword) + " | ";
+	html += showlink(keyword, "[unique] ", urlquery + "unique " + keyword) + " | ";
+	html += showlink(keyword, "[funny] ", urlquery + "funny " + keyword) + " | ";
+	html += showlink(keyword, "[news] ", urlquery + "news about " + keyword) + " | ";
+	html += showlink(keyword, "[review] ", urlquery + "review about " + keyword) + " | ";
+	html += showlink(keyword, "[infographic] ", urlquery + "infographic about " + keyword) + " | ";
+	html += showlink(keyword, "[statistics] ", urlquery + "statistics about " + keyword) + " | ";
+	html += "<br>";
+	html += showlink(keyword, "[website] ", urlquery + "best website about " + keyword) + " | ";
+	html += showlink(keyword, "[collection] ", urlquery + "best collections about " + keyword) + " | ";
+	html += showlink(keyword, "[shopping mall] ", urlquery + "best shopping mall about " + keyword) + " | ";
+	html += showlink(keyword, "[affiliate program] ", urlquery + "best affiliate program about " + keyword) + " | ";
+	html += showlink(keyword, "[community] ", urlquery + "best community about " + keyword) + " | ";
+	html += showlink(keyword, "[forum] ", urlquery + "best forum about " + keyword) + " | ";	
+	html += "<br>";
+	html += showlink(keyword, "[reddit] ", urlquery + sitekeyword + " site:reddit.com") + " | ";	
+	html += showlink(keyword, "[youtube] ", urlquery + sitekeyword + " site:youtube.com") + " | ";		
+	html += showlink(keyword, "[facebook] ", urlquery + sitekeyword + " site:facebook.com") + " | ";
+	html += showlink(keyword, "[twitter] ", urlquery + sitekeyword + " site:twitter.com") + " | ";
+	html += showlink(keyword, "[pinterest] ", urlquery + sitekeyword + " site:pinterest.com") + " | ";	
+	html += showlink(keyword, "[instagram] ", urlquery + sitekeyword + " site:instagram.com") + " | ";	
+	html += "<br>";
+	
+	html += "Quora <br>";
+	html += showlink(keyword, "[best] ", urlquery + "best " + sitekeyword + " site:quora.com") + " | ";	
+	html += showlink(keyword, "[unique] ", urlquery + "unique " + sitekeyword + " site:quora.com") + " | ";	
+	html += showlink(keyword, "[funny] ", urlquery + "funny " + sitekeyword + " site:quora.com") + " | ";	
+	html += showlink(keyword, "[website] ", urlquery + "best sites about " + sitekeyword + " site:quora.com") + " | ";	
+	html += showlink(keyword, "[shopping mall] ", urlquery + "best shopping sites about " + sitekeyword + " site:quora.com") + " | ";	
+	html += showlink(keyword, "[affiliate program] ", urlquery + "best affiliate program about " + sitekeyword + " site:quora.com") + " | ";	
+	return html;
+}
+function getmonitorlinks(keyword)
+{	
+	var html = "제품정보검색: ";	
+	//유튜브
+	html += showlink(keyword, "[youtube] ", "https://www.youtube.com/results?search_query=" + keyword) + " | ";
+	//구글트렌드	
+	html += showlink(keyword, "[google trend] ", "https://www.google.com/trends/explore?q=" + keyword) + " | ";
+	//뽐뿌
+	html += showlink(keyword, "[뽐뿌] ", "http://www.ppomppu.co.kr/zboard/zboard.php?id=ppomppu4&page_num=20&category=&search_type=sub_memo&x=24&y=14&keyword=" + keyword) + " | ";
+	//아마존 미국
+	html += showlink(keyword, "[amazon.com] ", "https://www.amazon.com/s/field-keywords=" + keyword) + " | ";
+	//아마존 제팬
+	html += showlink(keyword, "[amazon.co.jp] ", "https://www.amazon.co.jp/s/field-keywords=" + keyword) + " | ";
+	//일본가격비교
+	html += showlink(keyword, "[jp shop search] ", "http://kakaku.com/search_results/" + keyword) + " | ";
+	//미국가격비교
+	html += showlink(keyword, "[usa shop search] ", "https://www.shopping.net/shopping?q=" + keyword) + " | ";	
+	html += "<br>";
+	//쇼핑몰 정보
+	html += "쇼핑몰검색: ";
+	html += showlink(keyword, "[shopzilla] ", "http://www.shopzilla.com/" + keyword + "/search") + " | ";
+	html += showlink(keyword, "[pricegrabber] ", "http://www.pricegrabber.com/" + keyword + "-products/") + " | ";
+	html += showlink(keyword, "[become] ", "http://www.become.com/q?qry=" + keyword) + " | ";
+	html += showlink(keyword, "[nextag] ", "http://www3.nextag.com/shopping/products?search=" + keyword) + " | ";
+	html += showlink(keyword, "[dealtime] ", "http://www.dealtime.com/aaa/products?CLT=SCH&KW=" + keyword) + " | ";
+	html += showlink(keyword, "[gifts] ", "http://www.gifts.com/ProductSearch_r.aspx?start=&spell=&q=" + keyword) + " | ";
+	html += showlink(keyword, "[mysimon] ", "http://www.mysimon.com/shopping?qo=shopSearchBox&q=" + keyword) + " | ";
+	html += showlink(keyword, "[pricewatch] ", "http://www.pricewatch.com/search?gallery=1&sortby=price&q=" + keyword) + " | ";
+	html += showlink(keyword, "[techbargains] ", "http://www.techbargains.com/Search?SearchPageIndex=0&SearchPageSize=100&Search=" + keyword) + " | ";
+	html += showlink(keyword, "[globalsources] ", "http://www.globalsources.com/gsol/GeneralManager?point_search=on&page=search%2FProductSearchResults&product_search=on&supplier_search=off&article_search=off&apclick=&qType=PRODUCT&language=en&type=new&language=en&point_id=3000000149681&catalog_id=2000000003844&from=&loc=t&AGG=N&supp_list=true&compare_table=true&KWSearchType=ProdSearch&action=GetPoint&action=DoFreeTextSearch&query=" + keyword) + " | ";
+	html += "<br>";
+	//쿠폰정보	
+	html += "쿠폰검색: ";
+	html += showlink(keyword, "[coupons] ", "https://www.coupons.com/coupon-codes/search/?queryterm=" + keyword) + " | ";
+	html += showlink(keyword, "[dealsplus] ", "https://www.dealsplus.com/search?keyword=" + keyword) + " | ";
+	html += showlink(keyword, "[dealtaker] ", "http://www.dealtaker.com/site/search?q=" + keyword) + " | ";
+	html += showlink(keyword, "[savings] ", "http://www.savings.com/coupons/search/coupons_results.html?searchString=" + keyword) + " | ";	
+	html += showlink(keyword, "[slickdeals] ", "http://slickdeals.net/newsearch.php?src=SearchBarV2&searcharea=deals&searchin=first&q=aaa" + keyword) + " | ";
+	html += "<br>";	
+	//제휴프로그램
+	html += "제휴컨텐츠검색: ";
+	html += showlink(keyword, "[rakuten] ", "http://global.rakuten.com/ko/search/?k=" + keyword) + " | ";
+	html += showlink(keyword, "[clickbank] ", "https://accounts.clickbank.com/mkplSearchResult.htm?dores=true&includeKeywords=" + keyword) + " | ";
+	/* 가입필수
+	//shareasale
+	https://account.shareasale.com/index.cfm
+	//Commission Juction
+	http://www.cj.com/		
+	*/
+	return html;
+}
+//--------------------
+function showlink(keyword, name, href)
+{
+	//console.log(href);
+	return "<a target='_blank' href='" + href + "'>" + name + "</a>";
+}
+//-->
+</SCRIPT>
+<style type="text/css">
+<!--
+td,a,body,br,input {font:9pt 굴림,arial; line-height:150%}
+a.no {text-decoration:none}a.no {text-decoration:none}
+textarea {width: 100%}
+-->
+</style>
+</head>
+
+<body>
+<section>
+	<div>Basic Keywords (쉼표나 엔터키로구분)</div>
+	<div><textarea id="keyword" cols="100" rows="10"></textarea></div>	
+	<div>
+	<input type="button" id="btnquery1" value="Google 쿼리하기"></input>
+	<input type="button" id="btnquery2" value="모니터링 리스트 쿼리하기"></input>
+	</div>
+</section>
+<p></p>
+<section>
+	<!-- 검색링크 화면출력 영역 -->
+	<div id="divsearchlist">Nothing</div>
+</section>	
+</body>
+</html>

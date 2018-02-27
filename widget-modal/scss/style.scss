@@ -1,0 +1,55 @@
+@import "compass/css3";
+
+@import "compass";
+@import "https://fonts.googleapis.com/css?family=Lato";
+
+$distance: 10%;
+
+body {
+  background: #1abc9c;
+  font-family: 'Lato';
+}
+.modal {
+    display: block;
+    position: fixed;
+    left: $distance;
+    right: $distance;
+    top: $distance;
+    bottom: $distance;
+    color: #fff;
+    background: #16a085;
+    padding: 20px;
+    @include box-sizing(border-box);
+    @include box-shadow(5px 5px 0 0 #107f6a); 
+    @include animation(move 1s 1);
+    h1 {
+      font-weight: normal;
+      font-size: 40px;
+      font-weight: normal;
+      text-transform: uppercase;
+      span { 
+        font-size: 13px;
+        display: block;
+        padding-left: 4px;
+      }
+    }
+    p {
+      max-width: 100%;
+      font-size: 15px;
+      line-height: 25px;
+      //white-space: nowrap;
+	    //overflow: hidden;
+      //text-overflow: ellipsis;
+    }
+}
+@include keyframes(move) { 
+  0% {
+    @include transform(scale(1));
+  }
+  50% {
+    @include transform(scale(1.2));  
+  } 
+  100% {
+    @include transform(scale(1));  
+  }  
+} 

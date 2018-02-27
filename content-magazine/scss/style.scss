@@ -1,0 +1,302 @@
+/* The version of Bourbon used in this Pen was 4.* */
+@import "bourbon";
+@import url(https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic);
+
+$black100: black;
+$black200: tint($black100, 15%);
+$black300: tint($black200, 15%);
+
+@mixin chapter-number {
+
+  color: $black300;
+  background-color: $black300;
+  @include background-image( url('https://unsplash.it/1425'));
+  background-image: url("https://unsplash.it/1425"), -webkit-linear-gradient(0deg, black 0%, black 100%);
+  background-size: contain;
+  background-position: right top;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: rgba($black300, 0.4);
+}
+
+html,
+body {
+  height: 100%;
+  font-family: "Lora", Garamond, Georgia, serif; 
+  background: tint(wheat, 92%);
+}
+
+.wrapper {
+  display: block;
+  padding: rem(15);
+  float: left;
+}
+
+header {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin: rem(15) 0;
+
+  .category {
+    margin-left: rem(60);
+
+    &:before {
+      content: '';
+      display: block;
+      position: relative;
+      top: calc(17px/2);
+      left: rem(-40);
+      width: rem(30);
+      height: 0;
+      border-top: solid 1px red;
+    }
+
+    span {
+      font-size: rem(14);
+      font-style: italic;
+      color: $black300;
+    }
+  }
+}
+
+aside {
+  position: relative;
+  display: none;
+
+  @media (min-width: 1024px){
+    display: inline-block;
+    z-index: 2;
+    float: left;
+    width: 320px;
+    height: 100%;
+  }
+
+  .chapter {
+    @include chapter-number;
+    display: block;
+    float: right;
+    margin-right: rem(35);
+    font-size: rem(530);
+
+  }
+}
+
+article {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  float: left;
+
+  @media (min-width: 1024px){
+    padding-left: rem(30);
+    border-left: solid 1px $black100;
+    width: calc(100% - 320px - 1px - 15px );
+    margin-left: rem(-60);
+    max-width: rem(940);
+  }
+
+  .chapter {
+    @include chapter-number;
+    display: inline-block;
+    font-size: rem(80);
+    width: 100%;
+
+    @media (min-width: 480px){
+      float: left;
+      width: auto;
+      font-size: rem(100);
+      padding-right: rem(15);
+    }
+
+    @media (min-width: 1024px){
+      display: none;
+    }
+  }
+
+  .title {
+    color: $black300;
+    font-size: rem(24);
+    font-style: italic;
+    line-height: 1.1;
+    letter-spacing: 0.4px;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: inline-block;
+    float: left;
+    margin-bottom: rem(15);
+    width: 100%;
+
+    @media (min-width: 480px){
+      margin-bottom: rem(30);
+      max-width: calc(100% - 100px - 30px - 1px);    
+      padding-left: rem(15);
+      border-left: solid 1px $black100;
+      font-size: rem(32);
+    }
+
+    @media (min-width: 1024px){
+      border-left: none;
+      padding-left: 0;
+      display: block;
+      float: none;
+      max-width: 90%;
+    }
+
+    &:after {
+      content: "\f1d1";
+      font-family: "FontAwesome";
+      font-size: rem(28);
+      font-style: normal;
+      position: relative;
+      display: block;
+      width: rem(40);
+      height: auto;
+      border-radius: 50%;
+      margin-top: rem(15);
+
+      @media (min-width: 768px){
+        margin-top: rem(30);
+      }
+    }
+  }
+
+  .cover-img {
+    margin-bottom: rem(15);
+
+    @media (min-width: 768px){
+      margin-bottom: rem(30);
+    }
+
+    img { width: 100%;}
+  }
+
+  .content {
+    position: relative;
+    display: block;
+    margin-bottom: rem(15);
+
+    &.first,
+    &.two.col {
+      @media (min-width: 768px){
+        -webkit-columns: 2;
+        columns: 2;
+      }
+    }
+
+    h3 {
+      display: inline-block;
+      font-size: rem(18);
+      line-height: 1.2;
+      font-weight: bold;
+      margin-top: rem(20);
+      margin-bottom: rem(15);
+
+      @media (min-width: 768px){
+        font-size: rem(21);
+      }
+    }
+
+    h4 {
+      display: inline-block;
+      color: $black300;
+      font-size: rem(17);
+      line-height: 1.1;
+      font-weight: bold;
+      margin-top: rem(15);
+      margin-bottom: rem(10);
+
+      @media (min-width: 768px){
+        font-size: rem(18);
+      }
+    }
+
+    p {
+      font-size: rem(15);
+      line-height: 1.5;
+      margin-bottom: rem(15);
+    }
+
+    img {
+      width: 100%;
+      // @include filter(sepia(100%));
+      
+      @media (min-width: 640px){
+        width: initial;
+        max-width: 100%;
+      }
+
+      &.right {
+        margin: 0 0 rem(10) rem(10);
+        // margin-top: 0;
+        float: right;
+        // margin-right: 0;
+      }
+
+      &.left {
+        margin: 0 rem(10) rem(10) 0;
+        // margin-top: 0;
+        float: left;
+        // margin-left: 0;
+      }
+    }
+
+    ul {
+      margin-left: rem(17);
+      list-style: circle;
+
+      li {
+        font-size: rem(15);
+        margin-bottom: rem(10);
+        line-height: 1.5;
+      }
+    }
+  }
+
+  blockquote {
+    font-size: rem(23);
+    font-weight: 700;
+    font-style: italic;
+    line-height: 1.2;
+    margin-bottom: rem(15);
+    display: inline-block;
+    width: calc(100% - 15px - 20px - 10px);
+    
+    @media (min-width: 768px){
+    width: 75%;
+    font-size: rem(26);
+    }
+
+    &.right {
+      float: right;
+      text-align: right;
+      border-right: solid 10px $black300;
+      margin-left: rem(15);
+      margin-right: 0;
+      padding-right: rem(20);
+    }
+
+    &.left {
+      float: left;
+      text-align: left;
+      padding-left: rem(20);
+      border-left: solid 10px $black300;
+      margin-right: rem(15);
+      margin-left: 0;
+    }
+    &.full {
+      // display: block;
+      // margin: 0 rem(15) rem(15);
+      width: calc(100% - 15px - 20px - 10px);
+      float: none;
+    }
+  }
+
+  .flourish {
+    margin: rem(30) 0;
+    @include border-image(linear-gradient(90deg, transparent 0%, tint($black100, 20%) 50%, transparent 100%) 1);
+    border-top-width: 1px;
+    border-bottom-width: 0px;
+    border-bottom-color: transparent;
+  }
+}

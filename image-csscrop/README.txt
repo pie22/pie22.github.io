@@ -1,0 +1,3 @@
+A Pen created at CodePen.io. You can find this one at https://codepen.io/pie22/pen/xYmOPp.
+
+ Sometimes you don't have an option to crop images on the server side so you need to do cropping in the browser instead. Here are few examples how to create cropped image thumbnails using CSS only. All the examples are responsive and work for most image aspect ratios. Cropped images are scaled and centered to maximize visible area of image.

@@ -1,0 +1,3 @@
+A Pen created at CodePen.io. You can find this one at https://codepen.io/pie22/pen/BYvNdx.
+
+ Straight forward JS and very simple HTML/CSS to create a beautiful photo gallery. Photos are scaled and organized in rows so that the entire viewing frame is seamlessly filled up. The gallery is full responsive and will adjust accordingly when the screen size is changed. The size of the photos can be (roughly) adjusted via the variable at the top of the JS.

@@ -1,0 +1,164 @@
+html, body {
+  color: #333;
+  font-size: 16px;
+  line-height: 20px;
+}
+body {
+  margin: 20px;
+}
+
+h1 {
+  line-height: 1.2;
+  margin-bottom: 35px;
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+.image-grid {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  margin: 0 auto 35px;
+  max-width: 920px;
+}
+
+.svg-image-grid {
+  clear: both;
+  margin: 0 auto 35px;
+  max-width: 920px;
+  overflow: hidden;
+  position: relative;
+}
+
+/** Screen readers only class from Bootstrap */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  clip-path: inset(50%);
+  border: 0;
+}
+
+/** Actual code examples */
+
+/** Background */
+
+.image-bg {
+  background-position: center center;
+  background-size: cover;
+  -webkit-flex: 0 0 auto;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  margin: 5px;
+  width: calc(25% - 10px);
+}
+.image-bg-placeholder {
+  height: 100%;
+  visibility: hidden;
+  width: 100%;
+}
+
+/** Object-fit */
+
+.image-fit {
+  -webkit-flex: 0 0 auto;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  margin: 5px;
+  position: relative;
+  width: calc(25% - 10px);
+}
+.image-fit-placeholder {
+  height: 100%;
+  visibility: hidden;
+  width: 100%;
+}
+.image-fit-img {
+  bottom: 0;
+  height: 100%;
+  left: 0;
+  object-fit: cover;
+  object-position: center;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+}
+
+/** Absolute positioning */
+
+.image {
+  -webkit-flex: 0 0 auto;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  margin: 5px;
+  overflow: hidden;
+  position: relative;
+  width: calc(25% - 10px);
+}
+.image-placeholder {
+  height: 100%;
+  visibility: hidden;
+  width: 100%;
+}
+.image-img {
+  left: 50%;
+  max-height: 150%;
+  max-width: 177%;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+/** SVG */
+
+.image-svg {
+  float: left;
+  margin: 5px;
+  padding-bottom: calc(25% - 10px);
+  position: relative;
+  width: calc(25% - 10px);
+}
+.image-svg svg {
+  bottom: 0;
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+}
+
+/** Responsive grid */
+
+@media (max-width: 480px) {
+  .image,
+  .image-fit,
+  .image-bg,
+  .image-svg {
+    width: calc(50% - 10px);
+  }
+  .image-svg {
+    padding-bottom: calc(50% - 10px);
+  }
+}

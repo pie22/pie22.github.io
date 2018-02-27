@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Lazy Table Responsive</title>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  
+  
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+  <h1 class="title">Lazy Responsive Table</h1>
+<p>Clean HTML then leave it to jQuery.</p>
+
+
+
+
+
+<table class="responsive-table">
+  <thead>
+    <tr>
+      <th data-table="Custom Head 1">Head 1</th>
+      <th>Head 2</th>
+      <th>Head 3</th>
+      <th>Head 4</th>
+      <th data-table="Custom Head 5">Head 5</th>
+      <th>Head 6</th>
+    </tr>
+  </thead>
+  
+  <tbody>
+    <tr>
+      <td>Content 1a</td>
+      <td>Content 1b</td>
+      <td>Content 1c</td>
+      <td>Content 1d</td>
+      <td>Content 1e</td>
+      <td>Content 1f</td>
+    </tr>
+    
+    <tr>
+      <td>Content 2a</td>
+      <td>Content 2b</td>
+      <td>Content 2c</td>
+      <td>Content 2d</td>
+      <td>Content 2e</td>
+      <td>Content 2f</td>
+    </tr>
+    
+    <tr>
+      <td>Content 3a</td>
+      <td>Content 3b</td>
+      <td>Content 3c</td>
+      <td>Content 3d</td>
+      <td>Content 3e</td>
+      <td>Content 3f</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+
+<p style="margin-bottom: 40px;">
+  &larr; Try to <span style="font-style: italic; color: Tomato;">resize</span> window &rarr;
+</p>
+
+<p>You can set custom table header in <span style="color: Tomato">&lt;th&gt;</span> tag with 'data-table' attribute <br>or just let it use text.</p>
+
+<h2 class="pre-title">HTML Markup</h2>
+<pre>
+&lt;table class="responsive-table"&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+          &lt;th data-table="Custom Header 1"&gt;&lt;/th&gt;
+          &lt;th&gt;&lt;/th&gt;
+          ...
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    
+    &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+          ...
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+</pre>
+
+<h2 class="pre-title">jQuery</h2>
+<pre>
+$('.responsive-table').lazyResponsiveTable();
+</pre>
+
+<p><span style="color: Tomato;">*You still need to custom table style with CSS</span></p>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>

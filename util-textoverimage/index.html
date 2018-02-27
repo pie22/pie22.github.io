@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<style>
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+body {
+  margin:0;
+  font-family: "Nanum Gothic", "Roboto Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  overflow-y: hidden; overflow-x: hidden;  
+}
+.wrapper{	
+    text-align:center;	    
+}
+.glass{
+	position:absolute; /* absolute position (so we can position it where we want)*/
+	bottom:0px; /* position will be on bottom */
+	left:0px;
+	width:100%;
+	height:100%;
+	
+	/* styling bellow */
+	background-color:black;	
+	opacity:0.6; /* transparency */
+	filter:alpha(opacity=60); /* IE transparency */
+}
+.title{	
+	z-index:10;
+	position:fixed;	
+	width:100%;		
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+$(function(){
+	$('.title').attr('contenteditable', 'true');  
+	$('.glass').dblclick(function(){
+		var imgsrc = prompt("image url", "");		
+		if(imgsrc != null) $('.imgsrc').attr('src', imgsrc);
+	});
+	//--------------------------------
+	//move element to center of window
+	jQuery.fn.center = function ()
+	{
+		this.css("position","fixed");
+		this.css("top", ($(window).height() / 2) - (this.outerHeight() / 2));
+		this.css("left", ($(window).width() / 2) - (this.outerWidth() / 2));
+		return this;
+	}	
+	$(window).resize(function(){
+	   $('.title').center();
+	   $('.imgsrc').center();
+	   $('.glass').center();
+	});	
+	$('.title').center();
+	$('.imgsrc').center();
+	$('.glass').center();	
+});
+</script>
+</head>
+<body>
+<div class="wrapper">
+	<div class="title">
+		<div style="font-size:5em;color:#ffffff;">첫번째라인 큰글씨</div>
+		<div style="font-size:4em;color:#ff9422;">두번째라인 작은글씨</div>
+	</div>
+	<!-- image -->
+	<img class="imgsrc" src="https://lh3.googleusercontent.com/gdVw__xbBcp-YNSFzuVFhLQaF5fkWroWe_XspTpTmwlHJcc_mI0-KK21snLsQrmsABZQOZmh_qaUaP0VGiULtBksyX4nhA_34UwBD3l838RrdWcRsD0uxalXB3tDGrQl_zOVojY4VNBAqkozBu2EIfCre77H_7TJFg8CqLvW2pvmpe2iEE-jtOOxeNi7NDvOPF6vqFXs0ZZzwBWs64N_i6KssnIu4e06dzaJhNY895bOxOrFER6LB9zeDAktwB8B0jvPSBjVrV91WGPP-G8sCuL_3-JXl-cC1HbXUuBQ_MZvUYIalLQ_ZUhUMZYTEpz4vPH1p_4QgOgcpg8R1q4DHUF8uM-aQy6Q6EdrzOBjI7knGNlKwjsSh9ZaaK43CB1GtM3qZWoZKqDv9nto3ABwdkSJMsv-wPo7fEHIH9FlDYGKdQHbebKUBkjX4dz7tIqEfHUbZpGeW4WkO5i0nQYlSj2SIKDzHKBmlcJOqQjWitRh_-snQKW71XLZnl23xhXz80SxssZK51A61xdXkUoZzUfGOrmZyIO8zlC-_W72ZVzIUjhYE3J_DNTUMsQJPqQizMecr-tm4zdhInrPpJm1ugMdpz_yH3I8CUye1ko=w800-no-tmp.jpg">
+	<!-- description div -->
+	<div class="glass"></div>
+	<!-- end description div -->
+</div>
+</body>
+</html>

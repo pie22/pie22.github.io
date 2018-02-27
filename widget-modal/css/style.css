@@ -1,0 +1,91 @@
+@import "https://fonts.googleapis.com/css?family=Lato";
+body {
+  background: #1abc9c;
+  font-family: 'Lato';
+}
+
+.modal {
+  display: block;
+  position: fixed;
+  left: 10%;
+  right: 10%;
+  top: 10%;
+  bottom: 10%;
+  color: #fff;
+  background: #16a085;
+  padding: 20px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-box-shadow: 5px 5px 0 0 #107f6a;
+  -webkit-box-shadow: 5px 5px 0 0 #107f6a;
+  box-shadow: 5px 5px 0 0 #107f6a;
+  -moz-animation: move 1s 1;
+  -webkit-animation: move 1s 1;
+  animation: move 1s 1;
+}
+.modal h1 {
+  font-weight: normal;
+  font-size: 40px;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+.modal h1 span {
+  font-size: 13px;
+  display: block;
+  padding-left: 4px;
+}
+.modal p {
+  max-width: 100%;
+  font-size: 15px;
+  line-height: 25px;
+}
+
+@-moz-keyframes move {
+  0% {
+    -moz-transform: scale(1);
+    transform: scale(1);
+  }
+  50% {
+    -moz-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  100% {
+    -moz-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes move {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@keyframes move {
+  0% {
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  50% {
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  100% {
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
