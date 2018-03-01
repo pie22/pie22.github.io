@@ -1,4 +1,4 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+ï»¿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html>
 <head>
 <TITLE>Monitoring tool</TITLE>
@@ -24,14 +24,14 @@ function makesearch(where) {
 	var textlines = new Array();
 	var keyword = new Array();
 
-	//¿£ÅÍÅ°·Î ¶óÀÎ ºĞ¸®
+	//ì—”í„°í‚¤ë¡œ ë¼ì¸ ë¶„ë¦¬
 	textlines = $('#keyword').val().split('\n');
 	for (t=0; t < textlines.length; t++ )
 	{
-		//½°Ç¥·Î Å°¿öµå ºĞ¸®
+		//ì‰¼í‘œë¡œ í‚¤ì›Œë“œ ë¶„ë¦¬
 		keyword = textlines[t].split(',');
 		
-		//ÀÔ·ÂÅ°¿öµå¸¶´Ù ¸ğ´ÏÅÍ¸µÅ© ¸¸µé±â
+		//ì…ë ¥í‚¤ì›Œë“œë§ˆë‹¤ ëª¨ë‹ˆí„°ë§í¬ ë§Œë“¤ê¸°
 		for (i=0; i < keyword.length; i++) 
 			if(keyword[i].trim() != '')
 			{
@@ -49,11 +49,11 @@ function getgooglelinks(keyword) {
 	var urlquery = "https://www.google.co.kr/?gws_rd=ssl#q=";
 	var html="";
 	
-	//»çÀÌÆ®º¸Á¸
+	//ì‚¬ì´íŠ¸ë³´ì¡´
 	sitekeyword = keyword;
 	keyword = keyword + " -youtube.com ";
 	
-	//¹®Àå°Ë»ö(ÁÁÀº°Ë»ö¹®Àå ¿¹Á¦ ¾÷µ¥ÀÌÆ®)
+	//ë¬¸ì¥ê²€ìƒ‰(ì¢‹ì€ê²€ìƒ‰ë¬¸ì¥ ì˜ˆì œ ì—…ë°ì´íŠ¸)
 	html += "Google <br>";
 	html += showlink(keyword, "[KEYWORD]", urlquery + keyword) + " | ";
 	html += showlink(keyword, "[best] ", urlquery + "best " + keyword) + " | ";
@@ -90,24 +90,24 @@ function getgooglelinks(keyword) {
 }
 function getmonitorlinks(keyword)
 {	
-	var html = "Á¦Ç°Á¤º¸°Ë»ö: ";	
-	//À¯Æ©ºê
+	var html = "ì œí’ˆì •ë³´ê²€ìƒ‰: ";	
+	//ìœ íŠœë¸Œ
 	html += showlink(keyword, "[youtube] ", "https://www.youtube.com/results?search_query=" + keyword) + " | ";
-	//±¸±ÛÆ®·»µå	
+	//êµ¬ê¸€íŠ¸ë Œë“œ	
 	html += showlink(keyword, "[google trend] ", "https://www.google.com/trends/explore?q=" + keyword) + " | ";
-	//»Ë»Ñ
-	html += showlink(keyword, "[»Ë»Ñ] ", "http://www.ppomppu.co.kr/zboard/zboard.php?id=ppomppu4&page_num=20&category=&search_type=sub_memo&x=24&y=14&keyword=" + keyword) + " | ";
-	//¾Æ¸¶Á¸ ¹Ì±¹
+	//ë½ë¿Œ
+	html += showlink(keyword, "[ë½ë¿Œ] ", "http://www.ppomppu.co.kr/zboard/zboard.php?id=ppomppu4&page_num=20&category=&search_type=sub_memo&x=24&y=14&keyword=" + keyword) + " | ";
+	//ì•„ë§ˆì¡´ ë¯¸êµ­
 	html += showlink(keyword, "[amazon.com] ", "https://www.amazon.com/s/field-keywords=" + keyword) + " | ";
-	//¾Æ¸¶Á¸ Á¦ÆÒ
+	//ì•„ë§ˆì¡´ ì œíŒ¬
 	html += showlink(keyword, "[amazon.co.jp] ", "https://www.amazon.co.jp/s/field-keywords=" + keyword) + " | ";
-	//ÀÏº»°¡°İºñ±³
+	//ì¼ë³¸ê°€ê²©ë¹„êµ
 	html += showlink(keyword, "[jp shop search] ", "http://kakaku.com/search_results/" + keyword) + " | ";
-	//¹Ì±¹°¡°İºñ±³
+	//ë¯¸êµ­ê°€ê²©ë¹„êµ
 	html += showlink(keyword, "[usa shop search] ", "https://www.shopping.net/shopping?q=" + keyword) + " | ";	
 	html += "<br>";
-	//¼îÇÎ¸ô Á¤º¸
-	html += "¼îÇÎ¸ô°Ë»ö: ";
+	//ì‡¼í•‘ëª° ì •ë³´
+	html += "ì‡¼í•‘ëª°ê²€ìƒ‰: ";
 	html += showlink(keyword, "[shopzilla] ", "http://www.shopzilla.com/" + keyword + "/search") + " | ";
 	html += showlink(keyword, "[pricegrabber] ", "http://www.pricegrabber.com/" + keyword + "-products/") + " | ";
 	html += showlink(keyword, "[become] ", "http://www.become.com/q?qry=" + keyword) + " | ";
@@ -119,19 +119,19 @@ function getmonitorlinks(keyword)
 	html += showlink(keyword, "[techbargains] ", "http://www.techbargains.com/Search?SearchPageIndex=0&SearchPageSize=100&Search=" + keyword) + " | ";
 	html += showlink(keyword, "[globalsources] ", "http://www.globalsources.com/gsol/GeneralManager?point_search=on&page=search%2FProductSearchResults&product_search=on&supplier_search=off&article_search=off&apclick=&qType=PRODUCT&language=en&type=new&language=en&point_id=3000000149681&catalog_id=2000000003844&from=&loc=t&AGG=N&supp_list=true&compare_table=true&KWSearchType=ProdSearch&action=GetPoint&action=DoFreeTextSearch&query=" + keyword) + " | ";
 	html += "<br>";
-	//ÄíÆùÁ¤º¸	
-	html += "ÄíÆù°Ë»ö: ";
+	//ì¿ í°ì •ë³´	
+	html += "ì¿ í°ê²€ìƒ‰: ";
 	html += showlink(keyword, "[coupons] ", "https://www.coupons.com/coupon-codes/search/?queryterm=" + keyword) + " | ";
 	html += showlink(keyword, "[dealsplus] ", "https://www.dealsplus.com/search?keyword=" + keyword) + " | ";
 	html += showlink(keyword, "[dealtaker] ", "http://www.dealtaker.com/site/search?q=" + keyword) + " | ";
 	html += showlink(keyword, "[savings] ", "http://www.savings.com/coupons/search/coupons_results.html?searchString=" + keyword) + " | ";	
 	html += showlink(keyword, "[slickdeals] ", "http://slickdeals.net/newsearch.php?src=SearchBarV2&searcharea=deals&searchin=first&q=aaa" + keyword) + " | ";
 	html += "<br>";	
-	//Á¦ÈŞÇÁ·Î±×·¥
-	html += "Á¦ÈŞÄÁÅÙÃ÷°Ë»ö: ";
+	//ì œíœ´í”„ë¡œê·¸ë¨
+	html += "ì œíœ´ì»¨í…ì¸ ê²€ìƒ‰: ";
 	html += showlink(keyword, "[rakuten] ", "http://global.rakuten.com/ko/search/?k=" + keyword) + " | ";
 	html += showlink(keyword, "[clickbank] ", "https://accounts.clickbank.com/mkplSearchResult.htm?dores=true&includeKeywords=" + keyword) + " | ";
-	/* °¡ÀÔÇÊ¼ö
+	/* ê°€ì…í•„ìˆ˜
 	//shareasale
 	https://account.shareasale.com/index.cfm
 	//Commission Juction
@@ -149,7 +149,7 @@ function showlink(keyword, name, href)
 </SCRIPT>
 <style type="text/css">
 <!--
-td,a,body,br,input {font:9pt ±¼¸²,arial; line-height:150%}
+td,a,body,br,input {font:9pt êµ´ë¦¼,arial; line-height:150%}
 a.no {text-decoration:none}a.no {text-decoration:none}
 textarea {width: 100%}
 -->
@@ -158,16 +158,16 @@ textarea {width: 100%}
 
 <body>
 <section>
-	<div>Basic Keywords (½°Ç¥³ª ¿£ÅÍÅ°·Î±¸ºĞ)</div>
+	<div>Basic Keywords (ì‰¼í‘œë‚˜ ì—”í„°í‚¤ë¡œêµ¬ë¶„)</div>
 	<div><textarea id="keyword" cols="100" rows="10"></textarea></div>	
 	<div>
-	<input type="button" id="btnquery1" value="Google Äõ¸®ÇÏ±â"></input>
-	<input type="button" id="btnquery2" value="¸ğ´ÏÅÍ¸µ ¸®½ºÆ® Äõ¸®ÇÏ±â"></input>
+	<input type="button" id="btnquery1" value="Google ì¿¼ë¦¬í•˜ê¸°"></input>
+	<input type="button" id="btnquery2" value="ëª¨ë‹ˆí„°ë§ ë¦¬ìŠ¤íŠ¸ ì¿¼ë¦¬í•˜ê¸°"></input>
 	</div>
 </section>
 <p></p>
 <section>
-	<!-- °Ë»ö¸µÅ© È­¸éÃâ·Â ¿µ¿ª -->
+	<!-- ê²€ìƒ‰ë§í¬ í™”ë©´ì¶œë ¥ ì˜ì—­ -->
 	<div id="divsearchlist">Nothing</div>
 </section>	
 </body>
