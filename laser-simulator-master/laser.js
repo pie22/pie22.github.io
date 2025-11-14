@@ -51,7 +51,8 @@ var lasers=[{x:0,y:0.2,a:90},{x:1,y:0.1,a:270}];
 var mirrortriangles=[{x:0.5,y:0.2,a:0},{x:0.514,y:0.654,a:-8},{x:0.22,y:0.752,a:-1}];
 
 //Define square mirrors
-var mirrorsquares=[{x:0.712,y:0.088,a:0},{x:0.22,y:0.654,a:-16},{x:0.392,y:0.79,a:-26},{x:0.726,y:0.676,a:0}];
+//var mirrorsquares=[{x:0.712,y:0.088,a:0},{x:0.22,y:0.654,a:-16},{x:0.392,y:0.79,a:-26},{x:0.726,y:0.676,a:0}];
+var mirrorsquares=[{x:0.712,y:0.088,a:0},{x:0.22,y:0.654,a:-16}];
 
 //Define blocks not reflecting lasers
 var blocks=[{x:0.5,y:0.6,w:0.4,h:0.01,a:-6},{x:0.424,y:0.882,w:0.2,h:0.01,a:-28.5}];
