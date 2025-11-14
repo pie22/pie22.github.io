@@ -7,7 +7,7 @@ Little Javascript Laser/Mirror/Reflection Simulator using HTML5 Canvas in your b
 I wrote this little laser simulator for a small side project of mine. It is meant to simulate a real life laser puzzle. All mirrors are meant to be mosaic tiles of equal size, assembled into squares and triangles. Lasers are meant to hit sinks. This is to be acchieved by rotating the mirror pieces. Blocks prevent easy solutions.
 
 # Live Demo
-[pie22.github.io/laser-simulator-master](pie22.github.io/laser-simulator-master/)
+[http://pie22.github.io/laser-simulator-master](pie22.github.io/laser-simulator-master/)
 
 # Configuration
 
